@@ -1,0 +1,100 @@
+<html>
+<head>
+  <link href="https://fonts.googleapis.com/css?family=Yanone+Kaffeesatz:300" rel="stylesheet">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+
+<svg width='0' height='0'>
+  <defs>
+    <clipPath id="clipping" clipPathUnits="objectBoundingBox">
+      <polygon points=".3 0, 1 0, 1 1, 0 1" />
+    </clipPath>
+  </defs>
+</svg>
+
+  <style>
+    .red {
+      color: #ffeb3b;
+      background-color: #ff5252;
+    }
+    .blue {
+      color: white;
+      background-color: #3f51b5;
+    }
+    .yellow {
+      color: black;
+      background-color: #ffeb3b;
+    }
+    input[type="radio"]:checked {
+      flex-grow: 1;
+      background-color: transparent;
+      color: black;
+    }
+    input[type="radio"].first {
+      clip-path: polygon(0 0, 100% 0, calc(100% - 3vh) 100%, 0 100%);
+    }
+    input[type="radio"].last {
+      clip-path: polygon(3vh 0, 100% 0, 100% 100%, 0 100%);
+    }
+    input[type="radio"] {
+      clip-path: polygon(3vh 0, 100% 0, calc(100% - 3vh) 100%, 0 100%);
+      font-family: 'Yanone Kaffeesatz', sans-serif;
+      font-size: 5vh;
+      margin: 0 -1.5vh 0 -1.5vh;
+      outline: none;
+      line-height: 10vh;
+      text-align: center;
+      appearance: none;
+      -moz-appearance: none;
+      -webkit-appearance: none;
+      transition: flex-grow .5s ease-in-out, 
+                  background-color .5s ease-in-out;
+      width: 20vh;
+    }
+    input[type="radio"]:before {
+      content: attr(label);
+    }
+    body {
+      margin: 0;
+    }
+    .thingy {
+      position: fixed;
+      height: 10vh;
+      width: 100vw;
+      bottom: 0;
+      display: flex;
+    }
+    .tab {
+      transition: flex-grow .5s;
+      text-align: center;
+      display: inline-block;
+      vertical-align: middle;
+      line-height: 4em;
+    }
+    .black {
+      background-color: black;
+      color: white;
+    }
+    .white {
+      background-color: white;
+      color: black;
+    }
+    .page {
+      height: 100vh;
+    }
+    h1 {
+      font-family: 'Yanone Kaffeesatz', sans-serif;
+      font-size: 10em;
+    }
+  </style>
+</head>
+<body>
+  <div class="thingy">
+    <input class="first blue" type="radio" name="radio" checked label="stuff"/>
+    <input class="red" type="radio" name="radio" label="about"/>
+    <input class="last yellow" type="radio" name="radio" label="contact"/>
+  </div>
+  <div class="page white" id="stuff"><h1>stuff</h1></div>
+  <div class="page black" id="about"><h1>about</h1></div>
+  <div class="page white" id="contact"><h1>contact</h1></div>
+</body>
+</html>
