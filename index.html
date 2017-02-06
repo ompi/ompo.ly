@@ -1,0 +1,149 @@
+<html>
+<head>
+  <link href="https://fonts.googleapis.com/css?family=Yanone+Kaffeesatz:300" rel="stylesheet">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+
+  <style>
+    .red {
+      color: #ffeb3b;
+      background-color: #ff5252;
+    }
+    .blue {
+      color: white;
+      background-color: #3f51b5;
+    }
+    .yellow {
+      color: black;
+      background-color: #ffeb3b;
+    }
+
+    .nav-extended.bright {
+      color: black;
+      background-color: rgba(255, 255, 255, .8);
+    }
+    .nav-extended.dark {
+      color: white;
+      background-color: rgba(0, 0, 0, .8);
+    }
+    .nav-extended {
+      flex-grow: 1;
+    }
+    .nav-first {
+      clip-path: polygon(0 0, 100% 0, calc(100% - 3vh) 100%, 0 100%) !important;
+    }
+    .nav-last {
+      clip-path: polygon(3vh 0, 100% 0, 100% 100%, 0 100%) !important;
+    }
+    .nav-button {
+      cursor: pointer;
+      clip-path: polygon(3vh 0, 100% 0, calc(100% - 3vh) 100%, 0 100%);
+      font-family: 'Yanone Kaffeesatz', sans-serif;
+      font-size: 5vh;
+      margin: 0 -1.5vh 0 -1.5vh;
+      outline: none;
+      line-height: 10vh;
+      text-align: center;
+      transition: flex-grow .5s ease-in-out, 
+                  background-color .5s ease-in-out;
+      width: 20vh;
+    }
+    .nav-bar {
+      position: fixed;
+      height: 10vh;
+      width: 100vw;
+      bottom: 0;
+      display: flex;
+    }
+
+    body {
+      margin: 0;
+    }
+    .black {
+      background-color: black;
+      color: white;
+    }
+    .white {
+      background-color: white;
+      color: black;
+    }
+    .page {
+      height: 100vh;
+    }
+    .stuff {
+      display: flex;
+      flex-wrap: wrap;
+      align-content: stretch;
+    }
+    .onestuff {
+      margin: 10px 0px 0px 10px;
+      width: 20vh;
+      height: 20vh;
+    }
+    .bigstuff {
+      margin: 10px 0px 0px 10px;
+      width: 60vh;
+      height: 60vh;
+    }
+    .tinystuff {
+      margin: 10px 0px 0px 10px;
+      width: 10vh;
+      height: 10vh;
+    }
+    h1 {
+      margin: 0;
+      font-family: 'Yanone Kaffeesatz', sans-serif;
+      font-size: 10em;
+    }
+  </style>
+</head>
+<body>
+  <div id="nav-bar" class="nav-bar">
+    <div id="grp" class="nav-button nav-first nav-extended bright blue bright">stuff</div>
+    <div id="meh" class="nav-button dark red">about</div>
+    <div id="tyu" class="nav-button nav-last bright yellow">contact</div>
+  </div>
+  <div class="page white stuff" id="stuff">
+  <div class="black bigstuff"><h1>clocky</h1></div>
+  <div class="black bigstuff"><h1>switchy</h1></div>
+  <div class="black onestuff">clocky4</div>
+  </div>
+  <div class="page black" id="about"><h1>about</h1>
+Bacon ipsum dolor amet drumstick pork pastrami biltong kevin frankfurter t-bone turkey pork belly cupim corned beef picanha tri-tip. Andouille prosciutto sausage flank t-bone. Salami cow short loin bacon pork loin turducken pork chop venison, capicola shoulder pancetta shank strip steak burgdoggen spare ribs. Tongue pork loin short ribs, frankfurter ham shoulder chicken andouille drumstick tail chuck hamburger swine pork corned beef.
+Pancetta tenderloin burgdoggen ground round pig. Pastrami turkey ground round capicola tongue ham porchetta corned beef alcatra meatball. Prosciutto alcatra bacon ribeye turducken. Tenderloin short loin ham flank, frankfurter pork belly turducken shankle pastrami kevin. Biltong kevin tenderloin venison, turkey andouille chuck shoulder pancetta. Tongue cupim beef ribs drumstick cow fatback rump spare ribs strip steak hamburger flank. Leberkas short loin filet mignon, tongue flank boudin doner tri-tip jowl pork bacon frankfurter chuck hamburger strip steak.
+Capicola pork turkey, short ribs sirloin pancetta flank brisket meatball meatloaf. Swine ground round beef ribs pork belly kielbasa brisket. Beef corned beef pork chop, fatback cow tri-tip strip steak swine meatball doner short ribs kevin cupim. Pork belly t-bone ground round short ribs, alcatra filet mignon pork sirloin tenderloin boudin tri-tip shankle shoulder.
+Kevin t-bone sausage, bacon pork belly pork loin beef boudin andouille doner short loin ball tip ground round pork chop burgdoggen. Pork porchetta ham hock alcatra. Pastrami boudin meatball venison pancetta. Ham hock picanha shoulder spare ribs pork chop pork loin. Drumstick sausage brisket boudin.
+Short ribs tenderloin prosciutto alcatra. Prosciutto flank kielbasa beef meatball boudin pastrami. Venison pork belly chuck, sausage bresaola t-bone jowl tenderloin kevin short ribs pork shankle biltong shank. Ham meatloaf tri-tip, burgdoggen meatball chicken tenderloin andouille drumstick tail. Sirloin chuck ham hock pancetta boudin drumstick ribeye biltong bacon pork tri-tip leberkas.
+</div>
+  <div class="page white" id="contact"><h1>contact</h1></div>
+  <script>
+    var autoscroll = false;
+
+    $('#nav-bar').children('div').each(function() {
+        $(this).click(function() { 
+             navExtend($(this));
+             navScroll($(this));
+        });
+    });
+
+    function navExtend(obj) {
+        obj.addClass("nav-extended").siblings().removeClass("nav-extended");
+    }
+
+    function navScroll(obj) {
+        autoscroll = true;
+        $('html, body').animate({ scrollTop: $("#" + obj.html()).offset().top }, 500, 
+                function() { autoscroll = false; });
+    }
+
+    $(window).scroll(function() {
+        if (autoscroll) {
+            return;
+        }
+        var scroll = $(window).scrollTop() + $('#nav-bar').height() * 9.5;
+        if (scroll >= $("#contact").offset().top ) navExtend($('#tyu')); else
+        if (scroll >= $("#about").offset().top ) navExtend($('#meh')); else
+        if (scroll >= $("#stuff").offset().top ) navExtend($('#grp'));
+    });
+  </script>
+</body>
+</html>
