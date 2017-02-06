@@ -2,7 +2,7 @@
 <head>
   <link href="https://fonts.googleapis.com/css?family=Yanone+Kaffeesatz:300" rel="stylesheet">
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
-
+  <link href="navbar/navbar.css" rel="stylesheet">
   <style>
     .red {
       color: #ffeb3b;
@@ -16,45 +16,6 @@
       color: black;
       background-color: #ffeb3b;
     }
-
-    .nav-extended.bright {
-      color: black;
-      background-color: rgba(255, 255, 255, .8);
-    }
-    .nav-extended.dark {
-      color: white;
-      background-color: rgba(0, 0, 0, .8);
-    }
-    .nav-extended {
-      flex-grow: 1;
-    }
-    .nav-first {
-      clip-path: polygon(0 0, 100% 0, calc(100% - 3vh) 100%, 0 100%) !important;
-    }
-    .nav-last {
-      clip-path: polygon(3vh 0, 100% 0, 100% 100%, 0 100%) !important;
-    }
-    .nav-button {
-      cursor: pointer;
-      clip-path: polygon(3vh 0, 100% 0, calc(100% - 3vh) 100%, 0 100%);
-      font-family: 'Yanone Kaffeesatz', sans-serif;
-      font-size: 5vh;
-      margin: 0 -1.5vh 0 -1.5vh;
-      outline: none;
-      line-height: 10vh;
-      text-align: center;
-      transition: flex-grow .5s ease-in-out, 
-                  background-color .5s ease-in-out;
-      width: 20vh;
-    }
-    .nav-bar {
-      position: fixed;
-      height: 10vh;
-      width: 100vw;
-      bottom: 0;
-      display: flex;
-    }
-
     body {
       margin: 0;
     }
@@ -115,35 +76,6 @@ Kevin t-bone sausage, bacon pork belly pork loin beef boudin andouille doner sho
 Short ribs tenderloin prosciutto alcatra. Prosciutto flank kielbasa beef meatball boudin pastrami. Venison pork belly chuck, sausage bresaola t-bone jowl tenderloin kevin short ribs pork shankle biltong shank. Ham meatloaf tri-tip, burgdoggen meatball chicken tenderloin andouille drumstick tail. Sirloin chuck ham hock pancetta boudin drumstick ribeye biltong bacon pork tri-tip leberkas.
 </div>
   <div class="page white" id="contact"><h1>contact</h1></div>
-  <script>
-    var autoscroll = false;
-
-    $('#nav-bar').children('div').each(function() {
-        $(this).click(function() { 
-             navExtend($(this));
-             navScroll($(this));
-        });
-    });
-
-    function navExtend(obj) {
-        obj.addClass("nav-extended").siblings().removeClass("nav-extended");
-    }
-
-    function navScroll(obj) {
-        autoscroll = true;
-        $('html, body').animate({ scrollTop: $("#" + obj.html()).offset().top }, 500, 
-                function() { autoscroll = false; });
-    }
-
-    $(window).scroll(function() {
-        if (autoscroll) {
-            return;
-        }
-        var scroll = $(window).scrollTop() + $('#nav-bar').height() * 9.5;
-        if (scroll >= $("#contact").offset().top ) navExtend($('#tyu')); else
-        if (scroll >= $("#about").offset().top ) navExtend($('#meh')); else
-        if (scroll >= $("#stuff").offset().top ) navExtend($('#grp'));
-    });
-  </script>
+  <script src="navbar/navbar.js"></script>
 </body>
 </html>
