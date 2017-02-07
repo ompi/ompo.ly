@@ -1,3 +1,5 @@
+---
+---
 <html>
 <head>
   <link href="https://fonts.googleapis.com/css?family=Yanone+Kaffeesatz:300" rel="stylesheet">
@@ -63,6 +65,9 @@
       font-family: 'Yanone Kaffeesatz', sans-serif;
       font-size: 2em;
     }
+    a {
+      text-decoration: none;
+    }
   </style>
 </head>
 <body>
@@ -73,12 +78,9 @@
   </div>
   <div class="white page" style="height: auto; min-height: 100vh; padding: 0;" id="stuff">
     <div class="stuff-holder">
-      <div class="stuff red"><h1>R1</h1></div>
-      <div class="stuff blue"><h1>B1</h1></div>
-      <div class="stuff yellow"><h1>Y1</h1></div>
-      <div class="stuff red"><h1>R2</h1></div>
-      <div class="stuff blue"><h1>B2</h1></div>
-      <div class="stuff yellow"><h1>Y2</h1></div>
+      {% for stuff in site.stuff %}
+        <a href="{{ stuff.link }}"><div class="stuff {{ stuff.color }}"><h1>{{ stuff.name }}</h1></div></a>
+      {% endfor %}
     </div>
   </div>
   <div class="page black" id="about">
