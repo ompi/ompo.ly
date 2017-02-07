@@ -1,28 +1,40 @@
-var autoscroll = false;
+var Navbar = (function() {
+    var autoscroll = false;
+    var navTargets = [];
 
-$('#nav-bar').children('div').each(function() {
-    $(this).click(function() { 
-        navExtend($(this));
-        navScroll($(this));
-    });
-});
+    var extend = function(obj) {
+        obj.addClass("nav-extended").siblings().removeClass("nav-extended");
+    };
 
-function navExtend(obj) {
-    obj.addClass("nav-extended").siblings().removeClass("nav-extended");
-}
+    var scroll = function(obj) {
+        autoscroll = true;
+        $('html, body').animate({ scrollTop: $("#" + obj.html()).offset().top }, 500,
+                function() { autoscroll = false; });
+    };
 
-function navScroll(obj) {
-    autoscroll = true;
-    $('html, body').animate({ scrollTop: $("#" + obj.html()).offset().top }, 500, 
-            function() { autoscroll = false; });
-}
+    var init = function() {
+        $('#nav-bar').children('div').each(function() {
+            var targetId = $(this).html();
+            $(this).click(function() {
+                extend($(this));
+                scroll($(this));
+            });
+            navTargets.unshift({ id: targetId, button: $(this) });
+        });
 
-$(window).scroll(function() {
-    if (autoscroll) {
-        return;
+        $(window).scroll(function() {
+            if (autoscroll) {
+                return;
+            }
+            var scroll = $(window).scrollTop() + $('#nav-bar').height() * 9.5;
+            navTargets.some(function(target) {
+                if (scroll >= $("#" + target.id).offset().top) {
+                    extend($(target.button));
+                    return true;
+                }
+            });
+        });
     }
-    var scroll = $(window).scrollTop() + $('#nav-bar').height() * 9.5;
-    if (scroll >= $("#contact").offset().top ) navExtend($('#tyu')); else
-    if (scroll >= $("#about").offset().top ) navExtend($('#meh')); else
-    if (scroll >= $("#stuff").offset().top ) navExtend($('#grp'));
-});
+
+    return { init: init };
+})();
