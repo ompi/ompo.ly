@@ -1,0 +1,75 @@
+.red {
+  color: #ffeb3b;
+  background-color: #ff5252;
+}
+
+.blue {
+  color: white;
+  background-color: #3f51b5;
+}
+
+.yellow {
+  color: black;
+  background-color: #ffeb3b;
+}
+
+body {
+  margin: 0;
+}
+
+.black {
+  background-color: black;
+  color: white;
+}
+
+.white {
+  background-color: white;
+  color: black;
+}
+
+.page {
+  box-sizing: border-box;
+  height: 100vh;
+  padding: 10vh 10vh 20vh 10vh;
+  text-align: justify;
+  display: flex;
+}
+
+.stuff-holder {
+  margin:auto;
+  display: flex;
+  flex-wrap: wrap;
+  align-content: stretch;
+  align-items: center;
+}
+
+.bigstuff {
+  width: 66vh;
+  height: 66vh;
+  flex-grow: 2;
+}
+
+.stuff {
+  width: 44vh;
+  height: 44vh;
+  flex-grow: 1;
+}
+
+h1 {
+  margin: 0;
+  font-family: 'Yanone Kaffeesatz', sans-serif;
+  font-size: 8em;
+}
+
+p {
+//  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  margin: 0;
+  font-family: 'Yanone Kaffeesatz', sans-serif;
+  font-size: 2em;
+}
+
+a {
+  text-decoration: none;
+}
