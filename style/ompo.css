@@ -58,16 +58,15 @@ body {
 h1 {
   margin: 0;
   font-family: 'Yanone Kaffeesatz', sans-serif;
-  font-size: 8em;
+  font-size: 15vh;
 }
 
 p {
-//  white-space: nowrap;
   overflow: hidden;
   text-overflow: ellipsis;
   margin: 0;
   font-family: 'Yanone Kaffeesatz', sans-serif;
-  font-size: 2em;
+  font-size: 4vh;
 }
 
 a {
