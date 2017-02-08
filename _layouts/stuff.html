@@ -1,6 +1,10 @@
 <html>
   <body>
     <h1>hi there!</h1>
+    <h2>this is {{ page.name }}</h2>
     {{ content }}
+    {% for post in site.categories[page.name] reversed %}
+      <div style="border-style: solid;">{{ post.content }}</div>
+    {% endfor %}
   </body>
 </html>
