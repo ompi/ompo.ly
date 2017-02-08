@@ -15,6 +15,7 @@ var Navbar = (function() {
     var init = function() {
         $('#nav-bar').children('div').each(function() {
             var targetId = $(this).html();
+            $(this).attr('role', 'button');
             $(this).click(function() {
                 extend($(this));
                 scroll($(this));
