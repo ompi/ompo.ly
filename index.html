@@ -1,30 +1,22 @@
 ---
+layout: default
+title: home
 ---
-<html>
-<head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>ompoly - home</title>
-  <link href="https://fonts.googleapis.com/css?family=Yanone+Kaffeesatz:300" rel="stylesheet">
-  <link href="navbar/navbar.css" rel="stylesheet">
-  <link href="style/ompo.css" rel="stylesheet">
-</head>
-<body>
-  <div id="nav-bar" class="nav-bar">
-    <div class="nav-button nav-first nav-extended bright blue">stuff</div>
-    <div class="nav-button dark red">about</div>
-    <div class="nav-button nav-last bright yellow">contact</div>
+<div id="nav-bar" class="nav-bar">
+  <div class="nav-button nav-first nav-extended bright blue">stuff</div>
+  <div class="nav-button dark red">about</div>
+  <div class="nav-button nav-last bright yellow">contact</div>
+</div>
+<div class="white page" style="height: auto; min-height: 100vh; padding: 0;" id="stuff">
+  <div class="stuff-holder">
+    {% for stuff in site.stuff %}
+      <a href="{{ stuff.url }}">
+        <div class="stuff {{ stuff.color }}" role="button"><h1>{{ stuff.name }}</h1></div>
+      </a>
+    {% endfor %}
   </div>
-  <div class="white page" style="height: auto; min-height: 100vh; padding: 0;" id="stuff">
-    <div class="stuff-holder">
-      {% for stuff in site.stuff %}
-        <a href="{{ stuff.url }}">
-          <div class="stuff {{ stuff.color }}" role="button"><h1>{{ stuff.name }}</h1></div>
-        </a>
-      {% endfor %}
-    </div>
-  </div>
-  <div class="page black" id="about">
+</div>
+<div class="page black" id="about">
 <p>
 Bacon ipsum dolor amet pork chop tail meatloaf capicola flank chuck strip steak short ribs shank. Burgdoggen pork belly strip steak beef ball tip picanha beef ribs, shoulder prosciutto corned beef pancetta turducken kevin doner. Alcatra pork belly turkey kevin leberkas. Landjaeger tongue pork belly beef ribs. Tri-tip chicken meatball short loin rump pastrami doner drumstick flank venison shank andouille corned beef leberkas salami.
 Hamburger landjaeger pastrami rump shankle. Pork venison flank tail ham hock chicken meatball. Filet mignon tri-tip hamburger, shankle doner jerky pastrami shank ground round salami biltong capicola chicken. Salami strip steak venison, brisket meatloaf pastrami turducken pork chop chicken t-bone. Boudin venison pig t-bone meatloaf kevin, turkey jerky. Jowl corned beef salami filet mignon frankfurter pork loin capicola prosciutto sirloin.
@@ -32,11 +24,9 @@ Ham hock frankfurter prosciutto, tongue pork belly strip steak cow tenderloin me
 Ham hock frankfurter prosciutto, tongue pork belly strip steak cow tenderloin meatball turducken pork loin doner ball tip. Beef ribs jowl burgdoggen ground round, turkey tenderloin venison flank doner. Alcatra pork ham hock turducken cupim. Tenderloin short loin corned beef, kielbasa swine ball tip meatball t-bone drumstick sausage tail fatback kevin. Doner shankle jowl kevin, turducken ball tip shoulder.
 </p>
 </div>
-  <div class="page white" id="contact"></div>
-  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
-  <script src="navbar/navbar.js"></script>
-  <script>
-    Navbar.init();
-  </script>
-</body>
-</html>
+<div class="page white" id="contact"></div>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+<script src="navbar/navbar.js"></script>
+<script>
+  Navbar.init();
+</script>
