@@ -15,7 +15,9 @@
   <div class="white page" style="height: auto; min-height: 100vh; padding: 0;" id="stuff">
     <div class="stuff-holder">
       {% for stuff in site.stuff %}
-        <a href="{{ stuff.url }}"><div class="stuff {{ stuff.color }}"><h1>{{ stuff.name }}</h1></div></a>
+        <a href="{{ stuff.url }}">
+          <div class="stuff {{ stuff.color }}" role="button"><h1>{{ stuff.name }}</h1></div>
+        </a>
       {% endfor %}
     </div>
   </div>
