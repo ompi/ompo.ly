@@ -72,3 +72,42 @@ p {
 a {
   text-decoration: none;
 }
+
+.postbox {
+  box-sizing: border-box;
+  display: flex;
+  text-align: justify;
+  margin-bottom: -0.25vh;
+  padding: 5vh 10vh 5vh 10vh;
+  position: relative;
+}
+
+.postbox:before {
+  content: "";
+  display: block;
+  position: absolute;
+  top: 0;
+  left: 4.5vh;
+  width: 1vh;
+  height: 100%;
+  clip-path: polygon(0 .5vh, 100% 0, 100% calc(100% - .5vh), 0 100%);
+}
+
+.post-red:before {
+  background-color: #ff5252;
+}
+
+.post-blue:before {
+  background-color: #3f51b5;
+}
+
+.post-yellow:before {
+   background-color: #ffeb3b;
+}
+
+.postcounter {
+   display: block;
+   position: absolute;
+   top: 1vh;
+   left: 6.5vh;
+}
