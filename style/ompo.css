@@ -73,6 +73,19 @@ a {
   text-decoration: none;
 }
 
+.stuff-header {
+  width: 44vh;
+  height: 44vh;
+  float: left;
+}
+
+.stuff-description {
+  box-sizing: border-box;
+  margin-left: 44vh;
+  height: 44vh;
+  padding: 22px;
+}
+
 .postbox {
   box-sizing: border-box;
   display: flex;
