@@ -62,11 +62,13 @@ h1 {
 }
 
 p {
+  font-family: 'PT Serif', serif;
   overflow: hidden;
   text-overflow: ellipsis;
   margin: 0;
-  font-family: 'Yanone Kaffeesatz', sans-serif;
   font-size: 4vh;
+  line-height: 1.5;
+  padding-bottom: 5vh;
 }
 
 a {
@@ -80,15 +82,14 @@ a {
 }
 
 .stuff-description {
-  box-sizing: border-box;
   margin-left: 44vh;
   height: 44vh;
   padding: 22px;
+  text-align: justify;
 }
 
 .postbox {
   box-sizing: border-box;
-  display: flex;
   text-align: justify;
   margin-bottom: -0.25vh;
   padding: 5vh 10vh 5vh 10vh;
