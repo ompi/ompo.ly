@@ -61,6 +61,13 @@ h1 {
   font-size: 15vh;
 }
 
+h2 {
+  margin: 0;
+  font-family: 'Yanone Kaffeesatz', sans-serif;
+  font-size: 8vh;
+  padding-bottom: 5vh;
+}
+
 p {
   font-family: 'PT Serif', serif;
   overflow: hidden;
@@ -82,10 +89,22 @@ a {
 }
 
 .stuff-description {
+  box-sizing: border-box;
   margin-left: 44vh;
-  height: 44vh;
-  padding: 22px;
+  padding: 5vh 10vh 0 7vh;
   text-align: justify;
+}
+
+.stuff-description:before {
+  content: "";
+  z-index: -1;
+  display: block;
+  position: absolute;
+  top: 0;
+  left: 4.5vh;
+  width: 1vh;
+  height: 100%;
+  clip-path: polygon(0 .5vh, 100% 0, 100% calc(100% - .5vh), 0 100%);
 }
 
 .postbox {
@@ -116,12 +135,5 @@ a {
 }
 
 .post-yellow:before {
-   background-color: #ffeb3b;
-}
-
-.postcounter {
-   display: block;
-   position: absolute;
-   top: 1vh;
-   left: 6.5vh;
+  background-color: #ffeb3b;
 }

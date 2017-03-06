@@ -3,14 +3,14 @@ layout: default
 ---
 <div>
   <div class="stuff-header red"><h1>{{ page.name }}</h1></div>
-  <div class="stuff-description">{{ content }}</div>
+  <div class="stuff-description post-yellow">{{ content }}</div>
 </div>
 <div>
 {% assign count = 1 %}
 {% for post in site.categories[page.name] reversed %}
   {% capture color %}{% cycle 'post-red', 'post-blue', 'post-yellow' %}{% endcapture %}
   <div class="postbox {{ color }}">
-    <div class="postcounter">{{ count }}</div>
+    <h2>#{{ count }} {{ post.title }}</h2>
     {{ post.content }}
   </div>
   {% assign count = count | plus: 1 %}
