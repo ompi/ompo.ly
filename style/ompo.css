@@ -65,7 +65,7 @@ h2 {
   margin: 0;
   font-family: 'Yanone Kaffeesatz', sans-serif;
   font-size: 8vh;
-  padding-bottom: 5vh;
+  padding-bottom: 7vh;
 }
 
 p {
@@ -90,9 +90,11 @@ a {
 
 .stuff-description {
   box-sizing: border-box;
-  margin-left: 44vh;
-  padding: 5vh 10vh 0 7vh;
   text-align: justify;
+  margin-left: 44vh;
+  margin-bottom: -0.5vh;
+  padding: 5vh 10vh 0 7vh;
+  position: relative;
 }
 
 .stuff-description:before {
@@ -101,16 +103,16 @@ a {
   display: block;
   position: absolute;
   top: 0;
-  left: 4.5vh;
+  left: -39.5vh;
   width: 1vh;
   height: 100%;
-  clip-path: polygon(0 .5vh, 100% 0, 100% calc(100% - .5vh), 0 100%);
+  clip-path: polygon(0 0.5vh, 100% 0, 100% calc(100% - 0.5vh), 0 100%);
 }
 
 .postbox {
   box-sizing: border-box;
   text-align: justify;
-  margin-bottom: -0.25vh;
+  margin-bottom: -0.5vh;
   padding: 5vh 10vh 5vh 10vh;
   position: relative;
 }
@@ -123,7 +125,7 @@ a {
   left: 4.5vh;
   width: 1vh;
   height: 100%;
-  clip-path: polygon(0 .5vh, 100% 0, 100% calc(100% - .5vh), 0 100%);
+  clip-path: polygon(0 0.5vh, 100% 0, 100% calc(100% - 0.5vh), 0 100%);
 }
 
 .post-red:before {
