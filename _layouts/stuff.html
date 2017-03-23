@@ -10,6 +10,7 @@ layout: default
 {% for post in site.categories[page.name] reversed %}
   {% capture color %}{% cycle 'post-red', 'post-blue', 'post-yellow' %}{% endcapture %}
   <div class="postbox {{ color }}">
+    <div class="datebox"><h3>{{ post.date | date: "%Y-%m-%d" }}</h3></div>
     <h2>#{{ count }} {{ post.title }}</h2>
     {{ post.content }}
   </div>

@@ -68,6 +68,13 @@ h2 {
   padding-bottom: 7vh;
 }
 
+h3 {
+  margin: 0;
+  font-family: 'Yanone Kaffeesatz', sans-serif;
+  font-size: 5vh;
+  line-height: 8vh; // same as h2 font size
+}
+
 p {
   font-family: 'PT Serif', serif;
   overflow: hidden;
@@ -138,4 +145,8 @@ a {
 
 .post-yellow:before {
   background-color: #ffeb3b;
+}
+
+.datebox {
+  float: right;
 }
