@@ -41,9 +41,3 @@
 .nav-last {
   clip-path: polygon(3vh 0, 100% 0, 100% 100%, 0 100%) !important;
 }
-
-@-moz-document url-prefix() {
-  .nav-button {
-    margin: 0;
-  }
-}
